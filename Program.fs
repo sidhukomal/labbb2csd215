@@ -37,3 +37,23 @@ let successPercentages = topteam |> List.map calculateSuccessPercentage
 let avg = List.average successPercentages 
 
 printfn "The Percentage of Team %f" avg
+
+
+type Cuisine = 
+    | Korean 
+    | Turkish
+
+type MovieType = 
+    | Regular
+    | IMAX
+    | DBOX
+    | RegularWithSnacks 
+    | IMAXWithSnacks
+    | DBOXWithSnacks
+
+type Activity = 
+    | BoardGAme 
+    | Chill 
+    |Movie of MovieType
+    | Restaurant of Cuisine
+    | LongDrive of int* float
