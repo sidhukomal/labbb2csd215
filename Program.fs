@@ -29,3 +29,11 @@ let topteam = tm |> List.filter (fun tm -> tm.stats.Wins > tm.stats.Losses)
 
 topteam |> List.iter (fun tm -> printfn "tm Name: %s" tm.Name)
 topteam |> List.iter (fun tm -> printfn "tm wins: %d" tm.stats.Wins)
+
+let calculateSuccessPercentage tm =  float tm.stats.Wins / float ( tm.stats.Wins + tm.stats.Losses ) * 100.0
+
+let successPercentages = topteam |> List.map calculateSuccessPercentage 
+
+let avg = List.average successPercentages 
+
+printfn "The Percentage of Team %f" avg
